@@ -1,1 +1,11 @@
-# TEST
+---
+  - name: "Testing ansible playbook"
+    hosts: localhost
+    connection: local
+    tasks:
+
+    - name: "execute ls command"
+      shell: "ls -lrt"
+      register: "output"
+
+    - debug: var=output.stdout_lines
